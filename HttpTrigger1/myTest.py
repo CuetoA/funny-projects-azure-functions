@@ -1,5 +1,6 @@
 import json
-import keys
+#import keys
+from . import keys
 from twilio.rest import Client
 
 client = Client(keys.account_sid, keys.auth_token)
@@ -28,14 +29,19 @@ def gettingData(data):
 
 
 def sendingWhatsapp(data):
-    name, phone, secret_msg_id = unpackJson(data)
-    message = secret_messages[secret_msg_id](name) if secret_msg_id in secret_messages else "error"
+    name, phone, msg_id = unpackJson(data)
+    message = secret_messages[msg_id](name) if msg_id in secret_messages else "error"
 
-    twilio_msg = client.messages.create(
-        body=message,
-        from_=keys.twilio_number,
-        to = phone
-    )
+    try:
+        twilio_msg = client.messages.create(
+            body=message,
+            from_=keys.twilio_number,
+            to = "+" + phone
+        )
+        print(f'from:{keys.twilio_number}  type of from: {type(keys.twilio_number)} \n to: {phone} type of phone: {type(phone)}')
+    except Exception as e:
+        message += f"---Got error {e}---"
+    #message += " --bandera activada--"
 
     return message
 
@@ -44,11 +50,11 @@ def unpackJson(data):
     json_object = json.loads(data)
     name = json_object["name"] if "name" in json_object else None
     phone = json_object["phone"] if "phone" in json_object else None
-    secret_msg_id = int(json_object["secret_msg_id"]) if "secret_msg_id" in json_object else None
+    secret_msg_id = int(json_object["msg"]) if "msg" in json_object else None
     return name, phone, secret_msg_id
 
 
 if __name__ == "__main__":
-    data = '{"name": "Scarlette", "phone": "+525585311908", "secret_msg_id": 5}'
-    data2 = '{"name2": "Scarlette", "phone2": "+525585311908", "secret_msg_id": 5}'
+    data = '{"name": "Andrés", "phone": "+525585311908", "msg": 2}'
+    data2 = '{"name2": "Scarlette", "phone2": "+525585311908", "msg": 5}'
     print(sendingWhatsapp(data))

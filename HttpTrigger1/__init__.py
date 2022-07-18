@@ -16,6 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         else:
             data = req_body.get('data')
 
+
     if data:
         try:
             message = mt.sendingWhatsapp(data)
