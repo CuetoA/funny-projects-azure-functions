@@ -16,7 +16,7 @@ function sendMessage(name_v, phone_v, selector_v){
     var data_str = `&data={"name":"${name_v}","phone":"${phone_v}","msg":${parseInt(selector_v)}}`;
     let req_link = azureFunctionLink + data_str;
 
-    alert("¡Check your phone! :D")
+    alert("¡Checa las notificaciones de tu Cel! :D")
     httpGetAsync(req_link, () => {console.log("I think we sent it")})
 
     console.log(`The resulting string is: \n ${data_str} \n and its type is: \n ${typeof data_str}`)
