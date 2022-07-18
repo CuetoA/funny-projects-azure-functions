@@ -45,7 +45,7 @@ function validatePhone(phone){
         number += 1;
         flag = true;
     } 
-    if (!(phone.length >= 12)){
+    if (!(phone.length >= 10)){
         message += `\n${number}.- contenga todos los dígitos`;
         flag = true;
     }
