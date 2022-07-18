@@ -25,18 +25,19 @@ def gettingData(data):
 
 def sendingWhatsapp(data):
     name, phone, secret_msg_id = unpackJson(data)
-    message = secret_messages[secret_msg_id](name)
+    message = secret_messages[secret_msg_id](name) if secret_msg_id in secret_messages else "error"
     return message
 
 
 def unpackJson(data):
     json_object = json.loads(data)
-    name = json_object["name"] if json_object["name"] else None
-    phone = json_object["phone"] if json_object["phone"] else None
-    secret_msg_id = int(json_object["secret_msg_id"]) if json_object["secret_msg_id"] else None
+    name = json_object["name"] if "name" in json_object else None
+    phone = json_object["phone"] if "phone" in json_object else None
+    secret_msg_id = int(json_object["secret_msg_id"]) if "secret_msg_id" in json_object else None
     return name, phone, secret_msg_id
 
 
 if __name__ == "__main__":
     data = '{"name": "Scarlette", "phone": "+525585311908", "secret_msg_id": 5}'
-    print(sendingWhatsapp(data))
+    data2 = '{"name2": "Scarlette", "phone2": "+525585311908", "secret_msg_id": 5}'
+    print(sendingWhatsapp(data2))

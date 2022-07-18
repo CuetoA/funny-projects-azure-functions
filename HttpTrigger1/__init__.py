@@ -18,7 +18,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if data:
         try:
-            message = mt.gettingData(data)
+            message = mt.sendingWhatsapp(data)
         except:
             message = f"Hello, {data} there again"
 
