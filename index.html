@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure functions testing page</title>
+</head>
+<body>
+    <h1>Azure functions testing page</h1>
+    <div>
+        <form>
+            <label for="name_i">Ingrese su nombre</label> <br>
+            <input type="text" id="name_i" name="name_i" placeholder="Cuetorra"><br>
+    
+            <label for="phone_i">Ingrese su celular</label><br>
+            <input type="text" id="phone_i" name="phone_i" placeholder="Incluya lada: +525585311908"><br>
+    
+
+            <div class="custom-select">
+                <label>Escoja el mensaje secreto que desea recibir:</label><br>
+                <select id="selector">
+                  <option value="1">mensaje 1</option>
+                  <option value="2">mensaje 2</option>
+                  <option value="3">mensaje 3</option>
+                  <option value="4">mensaje 4</option>
+                  <option value="5">mensaje 5</option>
+                </select>
+              </div>
+
+            <br><button type="button" onclick="test()"> Submit</button>
+        </form>
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
