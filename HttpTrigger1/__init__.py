@@ -1,6 +1,6 @@
 import logging
-
 import azure.functions as func
+from . import myTest as mt
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
@@ -16,7 +16,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
+        try:
+            message = mt.helloAzure(name)
+        except:
+            message = f"Hello, {name} there again"
+            
+        return func.HttpResponse(message)
     else:
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
