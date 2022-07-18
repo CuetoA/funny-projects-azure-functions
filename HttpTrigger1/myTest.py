@@ -1,4 +1,8 @@
 import json
+import keys
+from twilio.rest import Client
+
+client = Client(keys.account_sid, keys.auth_token)
 
 secret_messages ={
     1: lambda name: f"Hola {str(name).capitalize()} quiero que sepas que te tqm.",
@@ -26,6 +30,13 @@ def gettingData(data):
 def sendingWhatsapp(data):
     name, phone, secret_msg_id = unpackJson(data)
     message = secret_messages[secret_msg_id](name) if secret_msg_id in secret_messages else "error"
+
+    twilio_msg = client.messages.create(
+        body=message,
+        from_=keys.twilio_number,
+        to = phone
+    )
+
     return message
 
 
@@ -40,4 +51,4 @@ def unpackJson(data):
 if __name__ == "__main__":
     data = '{"name": "Scarlette", "phone": "+525585311908", "secret_msg_id": 5}'
     data2 = '{"name2": "Scarlette", "phone2": "+525585311908", "secret_msg_id": 5}'
-    print(sendingWhatsapp(data2))
+    print(sendingWhatsapp(data))
