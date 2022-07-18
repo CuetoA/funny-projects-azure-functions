@@ -1,14 +1,24 @@
+const azureFunctionLink = "https://funnyprojectssms.azurewebsites.net/api/HttpTrigger1?code=iV-8drJgflIrYqMP_WHQmJZ5z9FFpyTCsxicBqDVFuJPAzFuP1MieQ=="
+
+
 function test(){
     console.group("test")
-    console.log("hello there testers");
 
     let [name_v, phone_v, selector_v] = getMyElementValues();
-    validatePhone(phone_v);
+    let response = validatePhone(phone_v);
+    response ? sendMessage(name_v, phone_v, selector_v) : alert("Algo salió mal")
 
-    console.log(`name_i value: ${name_v}`);
-    console.log(`phone_v value: ${phone_v}`);
-    console.log(`selector_v value: ${selector_v}`);
     console.groupEnd()
+}
+
+
+function sendMessage(name_v, phone_v, selector_v){
+    var data_str = `&data={"name":"${name_v}","phone":"${phone_v}","msg":${parseInt(selector_v)}}`;
+    let req_link = azureFunctionLink + data_str;
+
+    httpGetAsync(req_link, () => {console.log("I think we sent it")})
+
+    console.log(`The resulting string is: \n ${data_str} \n and its type is: \n ${typeof data_str}`)
 }
 
 
@@ -22,26 +32,35 @@ function getMyElementValues(){
 
 
 function validatePhone(phone){
-    console.log(`primer posición: ${phone[0]}`)
-
     let flag = false;
     let message = "Verifique que su celular: ";
     let number = 1;
 
     if (phone[0] !== "+"){
-        message += `\n${number}.- contenga la lada ejemplo: \"+525585311900\" incluyendo el \"+\" `
-        number += 1
+        message += `\n${number}.- contenga la lada ejemplo: \"+525585311900\" incluyendo el \"+\" `;
+        number += 1;
         flag = true;
     } 
     if (!(phone.length >= 10)){
-        message += `\n${number}.- contenga todos los dígitos`
+        message += `\n${number}.- contenga todos los dígitos`;
         flag = true;
     }
 
     if (flag){
-        alert(message)
-        return false
+        alert(message);
+        return false;
     }
 
     return true
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
 }
