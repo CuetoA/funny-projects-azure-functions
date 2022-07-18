@@ -1,4 +1,5 @@
 import logging
+import json
 import azure.functions as func
 from . import myTest as mt
 
@@ -6,21 +7,21 @@ from . import myTest as mt
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    name = req.params.get('name')
-    if not name:
+    data = req.params.get('data')
+    if not data:
         try:
             req_body = req.get_json()
         except ValueError:
             pass
         else:
-            name = req_body.get('name')
+            data = req_body.get('data')
 
-    if name:
+    if data:
         try:
-            message = mt.helloAzure(name)
+            message = mt.gettingData(data)
         except:
-            message = f"Hello, {name} there again"
-            
+            message = f"Hello, {data} there again"
+
         return func.HttpResponse(message)
     else:
         return func.HttpResponse(
