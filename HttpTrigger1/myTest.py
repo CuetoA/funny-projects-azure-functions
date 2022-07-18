@@ -1,6 +1,6 @@
 import json
-#import keys
-from . import keys
+import keys
+#from . import keys
 from twilio.rest import Client
 
 client = Client(keys.account_sid, keys.auth_token)
@@ -56,5 +56,6 @@ def unpackJson(data):
 
 if __name__ == "__main__":
     data = '{"name": "Andrés", "phone": "+525585311908", "msg": 2}'
-    data2 = '{"name2": "Scarlette", "phone2": "+525585311908", "msg": 5}'
-    print(sendingWhatsapp(data))
+    data2 = '{"name2": "Scarlette", "phone": "16479074852", "msg": 3}'
+    data3 = '{"name2": "chompi 1", "phone": "+525580883029", "msg": 5}'
+    print(sendingWhatsapp(data3))
