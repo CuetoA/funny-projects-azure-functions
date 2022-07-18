@@ -16,6 +16,7 @@ function sendMessage(name_v, phone_v, selector_v){
     var data_str = `&data={"name":"${name_v}","phone":"${phone_v}","msg":${parseInt(selector_v)}}`;
     let req_link = azureFunctionLink + data_str;
 
+    alert("¡Check your phone! :D")
     httpGetAsync(req_link, () => {console.log("I think we sent it")})
 
     console.log(`The resulting string is: \n ${data_str} \n and its type is: \n ${typeof data_str}`)
@@ -36,12 +37,15 @@ function validatePhone(phone){
     let message = "Verifique que su celular: ";
     let number = 1;
 
+    phone = phone.replaceAll(' ','');
+    phone = phone.replaceAll('-','');
+
     if (phone[0] !== "+"){
         message += `\n${number}.- contenga la lada ejemplo: \"+525585311900\" incluyendo el \"+\" `;
         number += 1;
         flag = true;
     } 
-    if (!(phone.length >= 10)){
+    if (!(phone.length >= 12)){
         message += `\n${number}.- contenga todos los dígitos`;
         flag = true;
     }
