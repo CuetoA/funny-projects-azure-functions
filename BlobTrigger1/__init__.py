@@ -1,6 +1,9 @@
 import time
+import pytz
 import logging
 import azure.functions as func
+from datetime import datetime, timezone
+
 
 def main(myblob: func.InputStream):
     new_name = changeName(myblob.name)
@@ -10,7 +13,6 @@ def main(myblob: func.InputStream):
                  f"Blob Size: {myblob.length} bytes\n"
                  f"New name created: {new_name}\n")
     
-
 
 def changeName(blob_name):
     splitted = str(blob_name).split("/")
@@ -25,7 +27,13 @@ def changeName(blob_name):
 def getTime():
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S_%d-%m-%G", t)
-    return current_time
+
+    utc_dt = datetime.now(timezone.utc)
+    tz = pytz.timezone('America/Mexico_City')
+    cdmx_time = str(datetime.now(tz)).split('.')[0]
+    # print(f"cdmx time is {cdmx_time}\n")
+
+    return cdmx_time
     
 
 # if __name__ == "__main__":
