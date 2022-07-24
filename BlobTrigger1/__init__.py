@@ -1,4 +1,4 @@
-import time
+import os
 import pytz
 import logging
 import azure.functions as func
@@ -11,10 +11,23 @@ def main(myblob: func.InputStream):
     logging.info(f"Python blob trigger function processed blob \n"
                  f"Name: {myblob.name}\n"
                  f"Blob Size: {myblob.length} bytes\n"
-                 f"New name created: {new_name}\n")
+                 )
+
+    try:        location = os.path(myblob)
+    except:     location = "not allowed"
+
+    logging.info(f"DATA========================="
+                 f"\nNew name created: {new_name}\n"
+                 f"Location: {location}\n"
+    )
     
 
 def changeName(blob_name):
+    new_name = getNewName(blob_name)
+    return new_name
+
+
+def getNewName(blob_name):
     splitted = str(blob_name).split("/")
     file_name, file_ext = splitted[-1].split(".")
 
@@ -25,10 +38,6 @@ def changeName(blob_name):
 
 
 def getTime():
-    t = time.localtime()
-    current_time = time.strftime("%H:%M:%S_%d-%m-%G", t)
-
-    utc_dt = datetime.now(timezone.utc)
     tz = pytz.timezone('America/Mexico_City')
     cdmx_time = str(datetime.now(tz)).split('.')[0]
     # print(f"cdmx time is {cdmx_time}\n")
@@ -36,6 +45,6 @@ def getTime():
     return cdmx_time
     
 
-# if __name__ == "__main__":
-#     resul = changeName("test-storage/aaaaaaa.png")
-#     print( resul )
+if __name__ == "__main__":
+    resul = changeName("test-storage/aaaaaaa.png")
+    print( resul )
