@@ -8,19 +8,40 @@ from datetime import datetime, timezone
 def main(myblob: func.InputStream):
     new_name = changeName(myblob.name)
     
+    try:       new_file = createFileTest(blob_name)
+    except:    new_file = "something didn't work"
+    
     logging.info(f"Python blob trigger function processed blob \n"
                  f"Name: {myblob.name}\n"
                  f"Blob Size: {myblob.length} bytes\n"
                  )
 
-    try:        location = os.path(myblob)
-    except:     location = "not allowed"
 
-    logging.info(f"DATA========================="
-                 f"\nNew name created: {new_name}\n"
-                 f"Location: {location}\n"
+    logging.info(f"=====DATA=====\n"
+                 f"New name created: {new_name}\n"
+                 f"Created new txt file: {new_file}\n"
     )
+
+
+def createFileTest(blob_name):
+    new_name = getNewFileName(blob_name)
+
+    with open(new_name, 'w') as fp:
+        pass
+    return new_name
     
+
+def getNewFileName(blob_name):
+    new_name = getNewName(blob_name);
+    splitted = new_name.split("/")
+    folder = splitted[0]
+    name, extention = splitted[-1].split(".")
+
+    new_file_name = f"{folder}/{name}.txt"
+    splitted[-1] = new_file_name
+    new_path = "/".join(splitted)
+    return new_path
+
 
 def changeName(blob_name):
     new_name = getNewName(blob_name)
@@ -46,5 +67,7 @@ def getTime():
     
 
 if __name__ == "__main__":
-    resul = changeName("test-storage/aaaaaaa.png")
+    #blob_name = "test-storage/aaaaaaa.png"
+    blob_name = "/home/cuetorra/Pictures/aaaaaaa.png"
+    resul = createFileTest(blob_name)
     print( resul )
