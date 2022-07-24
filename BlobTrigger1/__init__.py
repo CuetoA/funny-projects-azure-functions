@@ -19,11 +19,7 @@ def main(myblob: func.InputStream):
 
     logging.info(f"=====DATA=====\n"
                  f"New name created: {new_name}\n"
-<<<<<<< HEAD
                  f"Created new txt file: {new_file}\n"
-=======
-                 f"Created new file: {new_file}\n"
->>>>>>> d136335e37b2f63b75762e35240f21b0bb6ae39a
     )
 
 
