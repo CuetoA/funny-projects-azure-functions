@@ -20,10 +20,10 @@ body{
 }
 .title h1{
     width: 100%;
-    margin: 10vh 0 5vh 0;
+    margin: 14vh 0 5vh 0;
 
     text-align: center;
-    font-size: 80px;
+    font-size: 90px;
 }
 .contact-container{
     display: flex;
