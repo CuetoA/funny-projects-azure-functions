@@ -1,5 +1,8 @@
 :root{
     --back-color: black;
+    --back-mcolor: rgb(20,20,20);
+    --back-letter: rgb(120,120,120);
+    --riddlers-green: rgb(5,186,18);
     --letter-color: white;
 }
 @font-face {
@@ -21,4 +24,24 @@ body{
 
     text-align: center;
     font-size: 80px;
+}
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_f{
+    height: 50px;
+    width: 260px;
+    border-radius: 10px;
+    border: 2px solid var(--riddlers-green);
+    background-color: var(--back-mcolor);
+
+    text-align: center;
+    font-family: riddlerf_by_TJbutLag;
+    font-size: 40px;
+    color: var(--back-letter);
 }
