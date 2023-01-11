@@ -1,0 +1,19 @@
+:root{
+    --back-color: black;
+    --letter-color: white;
+}
+html{
+    background-color: var(--back-color);
+    color: var(--letter-color);
+}
+body{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr ;
+}
+.title h1{
+    width: 100%;
+    margin: 10vh 0 5vh 0;
+
+    text-align: center;
+    font-size: 80px;
+}
