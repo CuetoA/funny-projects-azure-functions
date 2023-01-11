@@ -2,9 +2,14 @@
     --back-color: black;
     --letter-color: white;
 }
+@font-face {
+    font-family: riddlerf_by_TJbutLag;
+    src: url(./Riddler\ Writing\ 2022.ttf);
+}
 html{
     background-color: var(--back-color);
     color: var(--letter-color);
+    font-family: riddlerf_by_TJbutLag;
 }
 body{
     display: grid;
