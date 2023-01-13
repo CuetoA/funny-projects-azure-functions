@@ -4,6 +4,7 @@
     --back-letter: rgb(120,120,120);
     --riddlers-green: rgb(5,186,18);
     --letter-color: white;
+    --card-slice-height: 40px;
 }
 @font-face {
     font-family: riddlerf_by_TJbutLag;
@@ -60,16 +61,39 @@ input[type=text]:hover{
 }
 .messages-card > .cards{
     height: 100px;
-    width: 200px;
+    width: 180px;
 
-    background-color: red;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
 }
-.pivot{
-    position: relative;
-    top: 0px !important;
+
+
+
+
+
+.my-btn-cont{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.my-btn-elem {
+    background-color: green;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+.top-card-button{
+    width: 50%;
+}
+.bottom-card-button{
+    height: var(--card-slice-height);
+    width: 100%;
+    align-items: center;
 }
 .f-test{
-    height: 20px;
+    height: var(--card-slice-height);
     width: 100%;
     background-color: blueviolet;
     
@@ -77,52 +101,49 @@ input[type=text]:hover{
     z-index: 2;
 }
 .b-test{
-    height: 20px;
+    height: var(--card-slice-height);
     width: 100%;
-    background-color: green;
+    background-color: rgb(87, 0, 128);
     z-index: 1;
 
     position: relative;
-    right: 20px;
+    /* right: 20px; */
     /* top: -20px; */
 }
-
-
-
 .r1f{
-    top: 0px;
+    top: calc( var(--card-slice-height) * -0);
 }
 .r2f{
-    top: -20px;
+    top: calc( var(--card-slice-height) * -1);
 }
 .r3f{
-    top: -40px;
+    top: calc( var(--card-slice-height) * -2);
 }
 .r4f{
-    top: -60px;
+    top: calc( var(--card-slice-height) * -3);
 }
 .r5f{
-    top: -80px;
+    top: calc( var(--card-slice-height) * -4);
 }
 .r6f{
-    top: -100px;
+    top: calc( var(--card-slice-height) * -5);
 }
 
 .r1b{
-    top: -20px;
+    top: calc( var(--card-slice-height) * -2);
 }
 .r2b{
-    top: -40px;
+    top: calc( var(--card-slice-height) * -3);
 }
 .r3b{
-    top: -60px;
+    top: calc( var(--card-slice-height) * -4);
 }
 .r4b{
-    top: -80px;
+    top: calc( var(--card-slice-height) * -5);
 }
 .r5b{
-    top: -100px;
+    top: calc( var(--card-slice-height) * -6);
 }
 .r6b{
-    top: -120px;
+    top: calc( var(--card-slice-height) * -7);
 }
