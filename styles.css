@@ -92,6 +92,11 @@ input[type=text]:hover{
     width: 100%;
     align-items: center;
 }
+.back-slices{
+    position: relative;
+    top: calc( var(--card-slice-height) * 7 * -1 );
+}
+
 .f-test{
     height: var(--card-slice-height);
     width: 100%;
@@ -99,26 +104,26 @@ input[type=text]:hover{
     
     position: relative;
     z-index: 2;
-
-    animation: my_animation;
-    animation-duration: 2s;
 }
 .b-test{
     height: var(--card-slice-height);
     width: 100%;
     background-color: rgb(87, 0, 128);
+    
+    position: relative;
     z-index: 1;
 
-    position: relative;
-    /* right: 20px; */
-    /* top: -20px; */
+    /*animation: my_animation;
+    animation-duration: 2s; */
 }
-@keyframes my_animation {
+/* @keyframes my_animation {
     0%{background-color: rgb(87, 0, 128);}
-    100% {background-color: black;}
+    100% {top: var(--card-slice-height);}
     
-}
-.r1f{
+} */
+
+
+/* .r1f{
     top: calc( var(--card-slice-height) * -0);
 }
 .r2f{
@@ -154,4 +159,4 @@ input[type=text]:hover{
 }
 .r6b{
     top: calc( var(--card-slice-height) * -7);
-}
+} */
