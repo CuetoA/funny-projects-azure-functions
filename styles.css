@@ -95,6 +95,16 @@ input[type=text]:hover{
 .back-slices{
     position: relative;
     top: calc( var(--card-slice-height) * 7 * -1 );
+
+    animation: my_animation;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    right: 40px;
+}
+@keyframes my_animation {
+    0%{background-color: rgb(87, 0, 128);}
+    100% {top: calc( var(--card-slice-height) * 6 * -1 )}
+    
 }
 
 .f-test{
@@ -112,15 +122,8 @@ input[type=text]:hover{
     
     position: relative;
     z-index: 1;
-
-    /*animation: my_animation;
-    animation-duration: 2s; */
 }
-/* @keyframes my_animation {
-    0%{background-color: rgb(87, 0, 128);}
-    100% {top: var(--card-slice-height);}
-    
-} */
+
 
 
 /* .r1f{
