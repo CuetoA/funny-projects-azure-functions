@@ -82,7 +82,7 @@ input[type=text]:hover{
     background-color: green;
     text-align: center;
     border-radius: 5px 5px 0 0;
-    z-index: 2;
+    z-index: 12;
 }
 .top-card-button{
     width: 50%;
@@ -99,7 +99,7 @@ input[type=text]:hover{
     animation: my_animation;
     animation-duration: 3s;
     animation-fill-mode: forwards;
-    right: 40px;
+    /* right: 40px; */
 }
 @keyframes my_animation {
     0%{background-color: rgb(87, 0, 128);}
@@ -126,40 +126,40 @@ input[type=text]:hover{
 
 
 
-/* .r1f{
-    top: calc( var(--card-slice-height) * -0);
+.r1f{
+    z-index: 10;
 }
 .r2f{
-    top: calc( var(--card-slice-height) * -1);
+    z-index: 8;
 }
 .r3f{
-    top: calc( var(--card-slice-height) * -2);
+    z-index: 6;
 }
 .r4f{
-    top: calc( var(--card-slice-height) * -3);
+    z-index: 4;
 }
 .r5f{
-    top: calc( var(--card-slice-height) * -4);
+    z-index: 2;
 }
 .r6f{
-    top: calc( var(--card-slice-height) * -5);
+    z-index: 0;
 }
 
 .r1b{
-    top: calc( var(--card-slice-height) * -2);
+    z-index: 11;
 }
 .r2b{
-    top: calc( var(--card-slice-height) * -3);
+    z-index: 9;
 }
 .r3b{
-    top: calc( var(--card-slice-height) * -4);
+    z-index: 7;
 }
 .r4b{
-    top: calc( var(--card-slice-height) * -5);
+    z-index: 5;
 }
 .r5b{
-    top: calc( var(--card-slice-height) * -6);
+    z-index: 3;
 }
 .r6b{
-    top: calc( var(--card-slice-height) * -7);
-} */
+    z-index: 1;
+}
