@@ -1,6 +1,10 @@
 const azureFunctionLink = "https://funnyprojectssms.azurewebsites.net/api/HttpTrigger1?code=iV-8drJgflIrYqMP_WHQmJZ5z9FFpyTCsxicBqDVFuJPAzFuP1MieQ=="
 
 
+function my_other_test(){
+    console.log("this is my other test");
+}
+
 function test(){
     console.group("test")
 

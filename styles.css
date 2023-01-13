@@ -99,6 +99,9 @@ input[type=text]:hover{
     
     position: relative;
     z-index: 2;
+
+    animation: my_animation;
+    animation-duration: 2s;
 }
 .b-test{
     height: var(--card-slice-height);
@@ -109,6 +112,11 @@ input[type=text]:hover{
     position: relative;
     /* right: 20px; */
     /* top: -20px; */
+}
+@keyframes my_animation {
+    0%{background-color: rgb(87, 0, 128);}
+    100% {background-color: black;}
+    
 }
 .r1f{
     top: calc( var(--card-slice-height) * -0);
