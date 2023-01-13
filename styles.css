@@ -74,12 +74,8 @@ input[type=text]:hover{
     background-color: blueviolet;
     
     position: relative;
-    top: -20px;
     z-index: 2;
 }
-/* .f-test:nth-child(5){
-    background-color: yellow;
-} */
 .b-test{
     height: 20px;
     width: 100%;
@@ -87,5 +83,46 @@ input[type=text]:hover{
     z-index: 1;
 
     position: relative;
+    right: 20px;
     /* top: -20px; */
+}
+
+
+
+.r1f{
+    top: 0px;
+}
+.r2f{
+    top: -20px;
+}
+.r3f{
+    top: -40px;
+}
+.r4f{
+    top: -60px;
+}
+.r5f{
+    top: -80px;
+}
+.r6f{
+    top: -100px;
+}
+
+.r1b{
+    top: -20px;
+}
+.r2b{
+    top: -40px;
+}
+.r3b{
+    top: -60px;
+}
+.r4b{
+    top: -80px;
+}
+.r5b{
+    top: -100px;
+}
+.r6b{
+    top: -120px;
 }
