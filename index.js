@@ -3,6 +3,9 @@ const azureFunctionLink = "https://funnyprojectssms.azurewebsites.net/api/HttpTr
 
 function my_other_test(){
     console.log("this is my other test");
+    element = document.getElementsByClassName("back-slices");
+    console.log(element[0]);
+    element[0].classList.add("test-back-slices")
 }
 
 function test(){
