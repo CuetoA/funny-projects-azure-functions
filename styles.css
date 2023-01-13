@@ -60,25 +60,32 @@ input[type=text]:hover{
 }
 .messages-card > .cards{
     height: 100px;
-    width: 100px;
+    width: 200px;
 
     background-color: red;
 }
-.f-test:nth-child(n){
+.pivot{
+    position: relative;
+    top: 0px !important;
+}
+.f-test{
     height: 20px;
     width: 100%;
     background-color: blueviolet;
-    /* 
-    the idea here is to use calc() to make operations with variables
-    then use nth-child(n) para cambiar comportamientos por cada hijo
-    deberemos ver si tenemos que usar n, o... si solo creams dos clases
-    */
+    
+    position: relative;
+    top: -20px;
+    z-index: 2;
 }
+/* .f-test:nth-child(5){
+    background-color: yellow;
+} */
 .b-test{
     height: 20px;
     width: 100%;
     background-color: green;
+    z-index: 1;
 
     position: relative;
-    top: -20px;
+    /* top: -20px; */
 }
