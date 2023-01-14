@@ -62,8 +62,6 @@ input[type=text]:hover{
 .messages-card > .cards{
     height: 100px;
     width: 180px;
-
-    /* background-color: red; */
     justify-content: center;
     align-items: center;
 }
@@ -112,6 +110,7 @@ input[type=text]:hover{
     width: 100%;
     background-color: blueviolet;
     
+    overflow: hidden;
     position: relative;
     z-index: 2;
 }
@@ -120,10 +119,15 @@ input[type=text]:hover{
     width: 100%;
     background-color: rgb(87, 0, 128);
     
+    overflow: hidden;
     position: relative;
     z-index: 1;
 }
-
+.img-test{
+    width: inherit;
+    position: relative;
+    z-index: inherit;
+}
 
 
 .r1f{z-index: 10;}
@@ -139,3 +143,13 @@ input[type=text]:hover{
 .r4b{z-index: 5; }
 .r5b{z-index: 3; }
 .r6b{z-index: 1; }
+
+
+.r1f > .img-test, .r1b > .img-test{ top: calc(var(--card-slice-height) * 0 * -1); }
+.r2f > .img-test, .r2b > .img-test{ top: calc(var(--card-slice-height) * 1 * -1); }
+.r3f > .img-test, .r3b > .img-test{ top: calc(var(--card-slice-height) * 2 * -1); }
+.r4f > .img-test, .r4b > .img-test{ top: calc(var(--card-slice-height) * 3 * -1); }
+.r5f > .img-test, .r5b > .img-test{ top: calc(var(--card-slice-height) * 4 * -1); }
+.r6f > .img-test, .r6b > .img-test{ top: calc(var(--card-slice-height) * 5 * -1); }
+
+
