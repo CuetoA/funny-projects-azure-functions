@@ -126,40 +126,16 @@ input[type=text]:hover{
 
 
 
-.r1f{
-    z-index: 10;
-}
-.r2f{
-    z-index: 8;
-}
-.r3f{
-    z-index: 6;
-}
-.r4f{
-    z-index: 4;
-}
-.r5f{
-    z-index: 2;
-}
-.r6f{
-    z-index: 0;
-}
+.r1f{z-index: 10;}
+.r2f{z-index: 8; }
+.r3f{z-index: 6; }
+.r4f{z-index: 4; }
+.r5f{z-index: 2; }
+.r6f{z-index: 0; }
 
-.r1b{
-    z-index: 11;
-}
-.r2b{
-    z-index: 9;
-}
-.r3b{
-    z-index: 7;
-}
-.r4b{
-    z-index: 5;
-}
-.r5b{
-    z-index: 3;
-}
-.r6b{
-    z-index: 1;
-}
+.r1b{z-index: 11;}
+.r2b{z-index: 9; }
+.r3b{z-index: 7; }
+.r4b{z-index: 5; }
+.r5b{z-index: 3; }
+.r6b{z-index: 1; }

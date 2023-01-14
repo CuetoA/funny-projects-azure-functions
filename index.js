@@ -1,11 +1,11 @@
 const azureFunctionLink = "https://funnyprojectssms.azurewebsites.net/api/HttpTrigger1?code=iV-8drJgflIrYqMP_WHQmJZ5z9FFpyTCsxicBqDVFuJPAzFuP1MieQ=="
 
 
-function my_other_test(){
+function my_other_test(id_num){
     console.log("this is my other test");
     element = document.getElementsByClassName("back-slices");
-    console.log(element[0]);
-    element[0].classList.add("test-back-slices")
+    console.log(element[id_num]);
+    element[id_num].classList.add("test-back-slices")
 }
 
 function test(){
