@@ -96,7 +96,7 @@ input[type=text]:hover{
 }
 .test-back-slices{
     animation: my_animation;
-    animation-duration: 3s;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
 }
 @keyframes my_animation {
