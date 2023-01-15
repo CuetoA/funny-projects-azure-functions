@@ -1,14 +1,14 @@
 const azureFunctionLink = "https://funnyprojectssms.azurewebsites.net/api/HttpTrigger1?code=iV-8drJgflIrYqMP_WHQmJZ5z9FFpyTCsxicBqDVFuJPAzFuP1MieQ=="
 
 
-function my_other_test(id_num){
+function animate_card_trans(id_num){
     console.log("this is my other test");
-    element = document.getElementsByClassName("back-slices");
+    element = document.getElementsByClassName("back-slices-container");
     console.log(element[id_num]);
     element[id_num].classList.add("test-back-slices")
 }
 
-function test(){
+function send_to_assure(){
     console.group("test")
 
     let [name_v, phone_v, selector_v] = getMyElementValues();

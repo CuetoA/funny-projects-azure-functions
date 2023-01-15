@@ -94,7 +94,7 @@ input[type=text]:hover{
     width: 100%;
     align-items: center;
 }
-.back-slices{
+.back-slices-container{
     position: relative;
     top: calc( var(--card-slice-height) * 7 * -1 );
 }
@@ -110,28 +110,18 @@ input[type=text]:hover{
     51% {top: calc( var(--card-slice-height) * 6.40 * -1 ); left: calc(-0.20 * 250px) ;}
     71% {top: calc( var(--card-slice-height) * 6.50 * -1 ); left: calc( 0.27 * 250px) ;}
     81% {top: calc( var(--card-slice-height) * 6.62 * -1 ); left: calc( -0.5 * 250px) ;}
-    100% {top: calc( var(--card-slice-height) * 6 * -1 );   left: calc(  0.0 * 250px) ;}
-    
+    100%{top: calc( var(--card-slice-height) * 6.00 * -1 ); left: calc(  0.0 * 250px) ;} 
 }
-
-.f-test{
+.f-slices,
+.b-slices{
     height: var(--card-slice-height);
     width: 100%;
-    background-color: blueviolet;
     
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }
-.b-test{
-    height: var(--card-slice-height);
-    width: 100%;
-    background-color: rgb(87, 0, 128);
-    
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-}
+.f-slices{ z-index: 2; }
+.b-slices{ z-index: 1; }
 .img-test{
     width: inherit;
     position: relative;
