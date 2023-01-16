@@ -108,17 +108,39 @@ input[type=text]:hover{
 }
 .test-back-slices{
     animation: my_animation;
-    animation-duration: 0.105s;
+    animation-duration: 0.212s;
     animation-fill-mode: forwards;
 }
 @keyframes my_animation {
-    0%{background-color: rgb(87, 0, 128);}
-    18% {top: calc( var(--card-slice-height) * 6.75 * -1 ); left: calc(-0.40 * 250px) ;}
-    36% {top: calc( var(--card-slice-height) * 6.13 * -1 ); left: calc( 0.45 * 250px) ;}
-    51% {top: calc( var(--card-slice-height) * 6.40 * -1 ); left: calc(-0.20 * 250px) ;}
-    71% {top: calc( var(--card-slice-height) * 6.50 * -1 ); left: calc( 0.27 * 250px) ;}
-    81% {top: calc( var(--card-slice-height) * 6.62 * -1 ); left: calc( -0.5 * 250px) ;}
-    100%{top: calc( var(--card-slice-height) * 6.00 * -1 ); left: calc(  0.0 * 250px) ;} 
+    0%  {top:  calc( var(--card-slice-height) * (6 + 0.95) * -1 ); left: calc(-0.40 * 360px) ;}
+    2%  {top:  calc( var(--card-slice-height) * (6 + 0.95) * -1 ); left: calc(-0.40 * 360px) ;}
+    7%  {top:  calc( var(--card-slice-height) * (6 + 0.60) * -1 ); left: calc(-0.20 * 360px) ;}
+    13% {top:  calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc(-0.35 * 360px) ;}
+    17% {top:  calc( var(--card-slice-height) * (6 + 0.30) * -1 ); left: calc(-0.20 * 360px) ;}
+    18% {top:  calc( var(--card-slice-height) * (6 + 0.05) * -1 ); left: calc(-0.55 * 360px) ;}
+    25% {top:  calc( var(--card-slice-height) * (6 + 0.05) * -1 ); left: calc(-0.55 * 360px) ;}
+    26% {top:  calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc( 0.45 * 360px) ;} 
+    38% {top:  calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc( 0.45 * 360px) ;}
+    43% {top:  calc( var(--card-slice-height) * (6 + 0.75) * -1 ); left: calc( 0.30 * 360px) ;}
+    45% {top:  calc( var(--card-slice-height) * (6 + 0.75) * -1 ); left: calc( 0.30 * 360px) ;}
+    46% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
+    50% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
+
+    /*
+    1.- cambiar complemento positivo de posición
+    2.- reducir movimiento en lateral
+    */
+
+    51% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
+    53% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
+    55% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
+    59% {top: calc( var(--card-slice-height) * (6 + 0.25) * -1 ); left: calc( 0.40 * 360px) ;}
+    66% {top: calc( var(--card-slice-height) * (6 + 0.90) * -1 ); left: calc(-0.45 * 360px) ;}
+    70% {top: calc( var(--card-slice-height) * (6 + 0.90) * -1 ); left: calc(-0.45 * 360px) ;}
+    76% {top: calc( var(--card-slice-height) * (6 + 0.60) * -1 ); left: calc( 0.20 * 360px) ;}
+    86% {top: calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc(-0.27 * 360px) ;}
+    95% {top: calc( var(--card-slice-height) * (6 + 0.30) * -1 ); left: calc(  0.5 * 360px) ;}
+    100%{top: calc( var(--card-slice-height) * (6 + 0.00) * -1 ); left: calc( -0.0 * 360px) ;} 
 }
 .f-slices,
 .b-slices{
