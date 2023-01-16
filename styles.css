@@ -126,10 +126,6 @@ input[type=text]:hover{
     46% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
     50% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
 
-    /*
-    1.- cambiar complemento positivo de posición
-    2.- reducir movimiento en lateral
-    */
 
     51% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
     53% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
