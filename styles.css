@@ -88,6 +88,7 @@ input[type=text]:hover{
 }
 .top-card-button{
     width: 50%;
+    height: 17px;
 }
 .bottom-card-button{
     height: var(--card-slice-height);
