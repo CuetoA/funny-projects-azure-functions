@@ -88,16 +88,23 @@ input[type=text]:hover{
 }
 .top-card-button{
     width: 50%;
-    height: 17px;
+    height: 20px;
 }
 .bottom-card-button{
     height: var(--card-slice-height);
     width: 100%;
-    align-items: center;
+    z-index: 12;
 }
-.back-slices-container{
+.bottom-card-button p{
+    margin: 10px 0 0 0;
+    font-size: 19px;
+}
+.front-slices-container{
     position: relative;
-    top: calc( var(--card-slice-height) * 7 * -1 );
+}
+.back-slices-container,.front-slices-container{
+    position: relative;
+    top: calc( var(--card-slice-height) * 0 * -1 );
 }
 .test-back-slices{
     animation: my_animation;
