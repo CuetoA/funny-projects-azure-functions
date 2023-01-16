@@ -4,33 +4,131 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure functions testing page</title>
+    <title>Get a riddle</title>
+
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>Azure functions testing page</h1>
-    <div>
-        <form>
-            <label for="name_i">Ingrese su nombre</label> <br>
-            <input type="text" id="name_i" name="name_i" placeholder="Cuetorra"><br>
-    
-            <label for="phone_i">Ingrese su celular</label><br>
-            <input type="text" id="phone_i" name="phone_i" placeholder="Incluya lada: +525585311908"><br>
-    
-
-            <div class="custom-select">
-                <label>Escoja el mensaje secreto que desea recibir:</label><br>
-                <select id="selector">
-                  <option value="1">mensaje 1</option>
-                  <option value="2">mensaje 2</option>
-                  <option value="3">mensaje 3</option>
-                  <option value="4">mensaje 4</option>
-                  <option value="5">mensaje 5</option>
-                </select>
-              </div>
-
-            <br><button type="button" onclick="test()"> Submit</button>
-        </form>
+    <div class="title">
+        <h1>Get a riddle in your phone</h1>
     </div>
+
+
+    <form class="contact-container">
+        <input type="text" id="name_i" class="input_f" name="name_i" placeholder="Name:Cuetorra"><br>
+
+        <input type="text" id="phone_i" class="input_f" name="phone_i" placeholder="Phone: +525585311908"><br>
+
+        <!-- <br><button type="button" onclick="send_to_assure()"> Submit</button> -->
+    </form>
+
+
+    <div class="messages-card">
+        
+        
+        <div class="cards">
+            <div class="my-btn-cont" onclick="send_to_assure(0)">
+                <div class="my-btn-elem top-card-button"></div>
+                <div class="my-btn-elem  bottom-card-button"><p>Click 2 get riddle 1</p></div>
+            </div>
+            
+            <div class="front-slices-container">
+                <div class="f-slices r1f"> <img class="img-test" src="./imgs/E1.png" alt=""> </div>
+                <div class="f-slices r2f"> <img class="img-test" src="./imgs/E1.png" alt=""> </div>
+                <div class="f-slices r3f"> <img class="img-test" src="./imgs/E1.png" alt=""> </div>
+                <div class="f-slices r4f"> <img class="img-test" src="./imgs/E1.png" alt=""> </div>
+                <div class="f-slices r5f"> <img class="img-test" src="./imgs/E1.png" alt=""> </div>
+                <div class="f-slices r6f"> <img class="img-test" src="./imgs/E1.png" alt=""> </div>
+            </div>
+
+            <div class="back-slices-container">
+                <div class="b-slices r1b"> <img class="img-test" src="./imgs/E2.png" alt=""> </div>
+                <div class="b-slices r2b"> <img class="img-test" src="./imgs/E2.png" alt=""> </div>
+                <div class="b-slices r3b"> <img class="img-test" src="./imgs/E2.png" alt=""> </div>
+                <div class="b-slices r4b"> <img class="img-test" src="./imgs/E2.png" alt=""> </div>
+                <div class="b-slices r5b"> <img class="img-test" src="./imgs/E2.png" alt=""> </div>
+                <div class="b-slices r6b"> <img class="img-test" src="./imgs/E2.png" alt=""> </div>
+            </div>
+        </div> 
+
+        <div class="cards">
+            <div class="my-btn-cont" onclick="send_to_assure(1)">
+                <div class="my-btn-elem top-card-button"></div>
+                <div class="my-btn-elem  bottom-card-button"><p>Click 2 get riddle 2</p></div>
+            </div>
+            
+            <div class="front-slices-container">
+                <div class="f-slices r1f"> <img class="img-test" src="./imgs/T1.png" alt=""> </div>
+                <div class="f-slices r2f"> <img class="img-test" src="./imgs/T1.png" alt=""> </div>
+                <div class="f-slices r3f"> <img class="img-test" src="./imgs/T1.png" alt=""> </div>
+                <div class="f-slices r4f"> <img class="img-test" src="./imgs/T1.png" alt=""> </div>
+                <div class="f-slices r5f"> <img class="img-test" src="./imgs/T1.png" alt=""> </div>
+                <div class="f-slices r6f"> <img class="img-test" src="./imgs/T1.png" alt=""> </div>
+            </div>
+
+            <div class="back-slices-container">
+                <div class="b-slices r1b"> <img class="img-test" src="./imgs/T2.png" alt=""> </div>
+                <div class="b-slices r2b"> <img class="img-test" src="./imgs/T2.png" alt=""> </div>
+                <div class="b-slices r3b"> <img class="img-test" src="./imgs/T2.png" alt=""> </div>
+                <div class="b-slices r4b"> <img class="img-test" src="./imgs/T2.png" alt=""> </div>
+                <div class="b-slices r5b"> <img class="img-test" src="./imgs/T2.png" alt=""> </div>
+                <div class="b-slices r6b"> <img class="img-test" src="./imgs/T2.png" alt=""> </div>
+            </div>
+        </div> 
+
+        <div class="cards">
+            <div class="my-btn-cont" onclick="send_to_assure(2)">
+                <div class="my-btn-elem top-card-button"></div>
+                <div class="my-btn-elem  bottom-card-button"><p>Click 2 get riddle 3</p></div>
+            </div>
+            
+            <div class="front-slices-container">
+                <div class="f-slices r1f"> <img class="img-test" src="./imgs/Y1.png" alt=""> </div>
+                <div class="f-slices r2f"> <img class="img-test" src="./imgs/Y1.png" alt=""> </div>
+                <div class="f-slices r3f"> <img class="img-test" src="./imgs/Y1.png" alt=""> </div>
+                <div class="f-slices r4f"> <img class="img-test" src="./imgs/Y1.png" alt=""> </div>
+                <div class="f-slices r5f"> <img class="img-test" src="./imgs/Y1.png" alt=""> </div>
+                <div class="f-slices r6f"> <img class="img-test" src="./imgs/Y1.png" alt=""> </div>
+            </div>
+
+            <div class="back-slices-container">
+                <div class="b-slices r1b"> <img class="img-test" src="./imgs/Y2.png" alt=""> </div>
+                <div class="b-slices r2b"> <img class="img-test" src="./imgs/Y2.png" alt=""> </div>
+                <div class="b-slices r3b"> <img class="img-test" src="./imgs/Y2.png" alt=""> </div>
+                <div class="b-slices r4b"> <img class="img-test" src="./imgs/Y2.png" alt=""> </div>
+                <div class="b-slices r5b"> <img class="img-test" src="./imgs/Y2.png" alt=""> </div>
+                <div class="b-slices r6b"> <img class="img-test" src="./imgs/Y2.png" alt=""> </div>
+            </div>
+        </div> 
+
+        <div class="cards">
+            <div class="my-btn-cont" onclick="send_to_assure(3)">
+                <div class="my-btn-elem top-card-button"></div>
+                <div class="my-btn-elem  bottom-card-button"><p>Click 2 get riddle 4</p></div>
+            </div>
+            
+            <div class="front-slices-container">
+                <div class="f-slices r1f"> <img class="img-test" src="./imgs/BB1.png" alt=""> </div>
+                <div class="f-slices r2f"> <img class="img-test" src="./imgs/BB1.png" alt=""> </div>
+                <div class="f-slices r3f"> <img class="img-test" src="./imgs/BB1.png" alt=""> </div>
+                <div class="f-slices r4f"> <img class="img-test" src="./imgs/BB1.png" alt=""> </div>
+                <div class="f-slices r5f"> <img class="img-test" src="./imgs/BB1.png" alt=""> </div>
+                <div class="f-slices r6f"> <img class="img-test" src="./imgs/BB1.png" alt=""> </div>
+            </div>
+
+            <div class="back-slices-container">
+                <div class="b-slices r1b"> <img class="img-test" src="./imgs/BB2.png" alt=""> </div>
+                <div class="b-slices r2b"> <img class="img-test" src="./imgs/BB2.png" alt=""> </div>
+                <div class="b-slices r3b"> <img class="img-test" src="./imgs/BB2.png" alt=""> </div>
+                <div class="b-slices r4b"> <img class="img-test" src="./imgs/BB2.png" alt=""> </div>
+                <div class="b-slices r5b"> <img class="img-test" src="./imgs/BB2.png" alt=""> </div>
+                <div class="b-slices r6b"> <img class="img-test" src="./imgs/BB2.png" alt=""> </div>
+            </div>
+        </div> 
+
+    </div>
+
+
     
 
     <script src="index.js"></script>

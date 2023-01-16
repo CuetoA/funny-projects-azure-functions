@@ -1,16 +1,16 @@
 import json
-#import keys
-from . import keys
+import keys
+#from . import keys
 from twilio.rest import Client
 
 client = Client(keys.account_sid, keys.auth_token)
 
 secret_messages ={
-    1: lambda name: f"Hola {str(name).capitalize()} quiero que sepas que te tqm.",
-    2: lambda name: f"Según Google el nombre \"{name}\" es de personas guapas.",
-    3: lambda name: f"Te deseo que tengas una excelente semana {name}",
-    4: lambda name: f"Tu nombre al revés es {str(name)[::-1].capitalize()}",
-    5: lambda name: f"{str(name).capitalize()}, la revolución de los bots de whatsapp empezó",
+    1: lambda name: f"Hola {str(name).capitalize()} unriddle me this: What is always in front of you but can’t be seen?",
+    2: lambda name: f"Hola {str(name).capitalize()} unriddle me this: What can you hold in your right hand, but never in your left hand?",
+    3: lambda name: f"Hola {str(name).capitalize()} unriddle me this: What gets wet while drying?",
+    4: lambda name: f"Hola {str(name).capitalize()} unriddle me this: What can you break, even if you never pick it up or touch it?",
+    5: lambda name: f"Hola {str(name).capitalize()} unriddle me this: I am easy to lift, but hard to throw. What am I?",
 }
 
 
@@ -56,5 +56,6 @@ def unpackJson(data):
 
 if __name__ == "__main__":
     data = '{"name": "Andrés", "phone": "+525585311908", "msg": 2}'
-    data2 = '{"name2": "Scarlette", "phone2": "+525585311908", "msg": 5}'
-    print(sendingWhatsapp(data))
+    data2 = '{"name2": "Scarlette", "phone": "16479074852", "msg": 3}'
+    data3 = '{"name2": "chompi 1", "phone": "+525580883029", "msg": 5}'
+    print(sendingWhatsapp(data3))
