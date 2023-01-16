@@ -7,6 +7,7 @@ function animate_card_trans(id_num){
     element[id_num].classList.add("test-back-slices");
 }
 
+
 function send_to_assure(id_num){
     console.group("test send to assure console log")
 
