@@ -125,7 +125,7 @@ input[type=text]:hover{
     45% {top:  calc( var(--card-slice-height) * (6 + 0.75) * -1 ); left: calc( 0.30 * 360px) ;}
     46% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
     50% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
-
+ 
 
     51% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
     53% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
