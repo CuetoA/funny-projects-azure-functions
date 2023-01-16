@@ -178,3 +178,12 @@ input[type=text]:hover{
 .r6f > .img-test, .r6b > .img-test{ top: calc(var(--card-slice-height) * 5 * -1); }
 
 
+@media (max-width: 750px){
+    .messages-card, 
+    .contact-container{
+        flex-direction: column;
+    }
+    .cards{
+        margin: var(--card-slice-height) 0 var(--card-slice-height) 0;
+    }
+}
