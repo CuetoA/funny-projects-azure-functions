@@ -1,0 +1,189 @@
+:root{
+    --back-color: black;
+    --back-mcolor: rgb(20,20,20);
+    --back-letter: rgb(120,120,120);
+    --riddlers-green: rgb(5,186,18);
+    --riddler-dark-green: rgb(3, 126, 55);
+    --letter-color: white;
+    --card-slice-height: 40px;
+}
+@font-face {
+    font-family: riddlerf_by_TJbutLag;
+    src: url(./Riddler\ Writing\ 2022.ttf);
+}
+html{
+    background-color: var(--back-color);
+    color: var(--letter-color);
+    font-family: riddlerf_by_TJbutLag;
+}
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr ;
+}
+.title h1{
+    width: 100%;
+    margin: 10vh 0 5vh 0;
+
+    text-align: center;
+    font-size: 90px;
+}
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_f{
+    height: 50px;
+    width: 260px;
+    border-radius: 10px;
+    border: 2px solid var(--riddlers-green);
+    background-color: var(--back-mcolor);
+
+    text-align: center;
+    font-family: riddlerf_by_TJbutLag;
+    font-size: 40px;
+    color: var(--back-letter);
+    outline: none;
+}
+input[type=text]:focus,
+input[type=text]:hover{
+    color: red;
+    border: 2px solid red;
+}
+
+
+
+.messages-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.messages-card > .cards{
+    height: 300px;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+
+.my-btn-cont{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.my-btn-elem {
+    background-color: var(--riddler-dark-green);
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    z-index: 12;
+}
+.top-card-button{
+    width: 50%;
+    height: 20px;
+}
+.bottom-card-button{
+    height: var(--card-slice-height);
+    width: 100%;
+    z-index: 12;
+}
+.bottom-card-button p{
+    margin: 10px 0 0 0;
+    font-size: 19px;
+}
+.front-slices-container{
+    position: relative;
+}
+.back-slices-container,.front-slices-container{
+    position: relative;
+    top: calc( var(--card-slice-height) * 0 * -1 );
+}
+.test-back-slices{
+    animation: my_animation;
+    animation-duration: 0.212s;
+    animation-fill-mode: forwards;
+}
+@keyframes my_animation {
+    0%  {top:  calc( var(--card-slice-height) * (6 + 0.95) * -1 ); left: calc(-0.40 * 360px) ;}
+    2%  {top:  calc( var(--card-slice-height) * (6 + 0.95) * -1 ); left: calc(-0.40 * 360px) ;}
+    7%  {top:  calc( var(--card-slice-height) * (6 + 0.60) * -1 ); left: calc(-0.20 * 360px) ;}
+    13% {top:  calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc(-0.35 * 360px) ;}
+    17% {top:  calc( var(--card-slice-height) * (6 + 0.30) * -1 ); left: calc(-0.20 * 360px) ;}
+    18% {top:  calc( var(--card-slice-height) * (6 + 0.05) * -1 ); left: calc(-0.55 * 360px) ;}
+    25% {top:  calc( var(--card-slice-height) * (6 + 0.05) * -1 ); left: calc(-0.55 * 360px) ;}
+    26% {top:  calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc( 0.45 * 360px) ;} 
+    38% {top:  calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc( 0.45 * 360px) ;}
+    43% {top:  calc( var(--card-slice-height) * (6 + 0.75) * -1 ); left: calc( 0.30 * 360px) ;}
+    45% {top:  calc( var(--card-slice-height) * (6 + 0.75) * -1 ); left: calc( 0.30 * 360px) ;}
+    46% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
+    50% {top:  calc( var(--card-slice-height) * (6 + 0.20) * -1 ); left: calc(-0.20 * 360px) ;}
+ 
+
+    51% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
+    53% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
+    55% {top: calc( var(--card-slice-height) * (6 + 1.00) * -1 ); left: calc( 0.00 * 360px) ;}
+    59% {top: calc( var(--card-slice-height) * (6 + 0.25) * -1 ); left: calc( 0.40 * 360px) ;}
+    66% {top: calc( var(--card-slice-height) * (6 + 0.90) * -1 ); left: calc(-0.45 * 360px) ;}
+    70% {top: calc( var(--card-slice-height) * (6 + 0.90) * -1 ); left: calc(-0.45 * 360px) ;}
+    76% {top: calc( var(--card-slice-height) * (6 + 0.60) * -1 ); left: calc( 0.20 * 360px) ;}
+    86% {top: calc( var(--card-slice-height) * (6 + 0.50) * -1 ); left: calc(-0.27 * 360px) ;}
+    95% {top: calc( var(--card-slice-height) * (6 + 0.30) * -1 ); left: calc(  0.5 * 360px) ;}
+    100%{top: calc( var(--card-slice-height) * (6 + 0.00) * -1 ); left: calc( -0.0 * 360px) ;} 
+}
+.f-slices,
+.b-slices{
+    height: var(--card-slice-height);
+    width: 100%;
+    
+    overflow: hidden;
+    position: relative;
+}
+.f-slices{ z-index: 2; }
+.b-slices{ z-index: 1; }
+.img-test{
+    width: inherit;
+    position: relative;
+    z-index: inherit;
+}
+
+
+.r1f{z-index: 10;}
+.r2f{z-index: 8; }
+.r3f{z-index: 6; }
+.r4f{z-index: 4; }
+.r5f{z-index: 2; }
+.r6f{z-index: 0; }
+
+.r1b{z-index: 11;}
+.r2b{z-index: 9; }
+.r3b{z-index: 7; }
+.r4b{z-index: 5; }
+.r5b{z-index: 3; }
+.r6b{z-index: 1; }
+
+
+.r1f > .img-test, .r1b > .img-test{ top: calc(var(--card-slice-height) * 0 * -1); }
+.r2f > .img-test, .r2b > .img-test{ top: calc(var(--card-slice-height) * 1 * -1); }
+.r3f > .img-test, .r3b > .img-test{ top: calc(var(--card-slice-height) * 2 * -1); }
+.r4f > .img-test, .r4b > .img-test{ top: calc(var(--card-slice-height) * 3 * -1); }
+.r5f > .img-test, .r5b > .img-test{ top: calc(var(--card-slice-height) * 4 * -1); }
+.r6f > .img-test, .r6b > .img-test{ top: calc(var(--card-slice-height) * 5 * -1); }
+
+
+@media (max-width: 750px){
+    .messages-card, 
+    .contact-container{
+        flex-direction: column;
+    }
+    .cards{
+        margin: var(--card-slice-height) 0 var(--card-slice-height) 0;
+    }
+}
